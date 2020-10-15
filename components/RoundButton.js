@@ -16,14 +16,15 @@ const styles = StyleSheet.create({
         borderRadius: 25,
         paddingVertical: 14,
         paddingHorizontal: 10,
-        backgroundColor: '#B25454',
+        // backgroundColor: '#B25454',
         width: 270,
         height: 50,
     },
     buttonText: {
-        color: 'white',
+        color: '#453F3E',
         fontWeight: 'bold',
         textAlign: 'center',
-        fontSize: 16,
+        fontSize: 20,
+        // fontFamily: "SFPro-Display-Medium",
     }
 })

@@ -5,8 +5,8 @@ import RoundButton from '../components/RoundButton'
 export default function LogIn() {
     return (
       <View style={styles.container}>
-        <Image style = {{height: 65, width: 65, margin: 5}} source={require('../assets/images/M.png')} resizeMode="contain" />
-        <RoundButton style={{margin: 30, backgroundColor: '#B25454'}} text="Sign in with Google" onPress={() => console.log("Google button pressed")} />
+        {/* <Image style = {{height: 65, width: 65, margin: 5}} source={require('../assets/images/appIcon - red.png')} resizeMode="contain" /> */}
+        {/* <RoundButton style={{margin: 30, backgroundColor: '#B25454'}} text="Sign in with Google" onPress={() => console.log("Google button pressed")} />
         
         <View style={{borderWidth: 0.75,
           borderColor:'white',
@@ -22,7 +22,7 @@ export default function LogIn() {
           placeholder= "Password"
           placeholderTextColor = "#fff"
         />
-        <RoundButton style={{margin: 30, backgroundColor: '#B25454'}} text="Login" onPress={() => console.log("login button pressed")} />
+        <RoundButton style={{margin: 30, backgroundColor: '#B25454'}} text="Login" onPress={() => console.log("login button pressed")} /> */}
       </View>
     );
   }
@@ -32,7 +32,7 @@ export default function LogIn() {
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#5B5353'
+      backgroundColor: '#FCFCFC'
     },
 
     input: {
