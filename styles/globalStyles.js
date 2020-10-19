@@ -13,6 +13,18 @@ export const globalStyles = StyleSheet.create({
     SFProText_Bold: {
         fontFamily: "SFProText-Bold"
     },
+    SFProText_Heavy: {
+        fontFamily: "SFProText-Heavy",
+    },
+    SFProText_Regular: {
+        fontFamily: "SFProText-Regular",
+    },
+    SFProDisplay_Bold: {
+        fontFamily: "SFProDisplay-Bold"
+    },
+    SFProText_Light: {
+        fontFamily: "SFProText-Light"
+    },
     darkText: {
         color: '#453F3E'
     },

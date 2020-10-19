@@ -3,10 +3,13 @@ import * as Font from 'expo-font';
 import { AppLoading } from 'expo'
 import LogIn from './screens/LogIn'
 import JoinEvent from './screens/JoinEvent'
+import Home from './screens/Home'
 
 export default function App() {
   const getFonts = () => {
     return Font.loadAsync({
+      'SFProText-Light': require('./assets/fonts/SFProText-Light.otf'),
+      'SFProText-Heavy': require('./assets/fonts/SFProText-Heavy.otf'),
       'SFProDisplay-Regular': require('./assets/fonts/SFProDisplay-Regular.otf'),
       'SFProDisplay-Bold': require('./assets/fonts/SFProDisplay-Bold.otf'),
       'SFProText-Bold': require('./assets/fonts/SFProText-Bold.otf'),
@@ -22,7 +25,8 @@ export default function App() {
   if (fontsLoaded) {
     return (
       //<LogIn />
-      <JoinEvent />
+      //<JoinEvent />
+      <Home />
     )
   } else {
     return (
