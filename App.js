@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import * as Font from 'expo-font';
 import { AppLoading } from 'expo'
 import LogIn from './screens/LogIn'
-import Welcome from './screens/Welcome'
 import JoinEvent from './screens/JoinEvent'
 
 export default function App() {
   const getFonts = () => {
     return Font.loadAsync({
+      'SFProDisplay-Regular': require('./assets/fonts/SFProDisplay-Regular.otf'),
+      'SFProDisplay-Bold': require('./assets/fonts/SFProDisplay-Bold.otf'),
       'SFProText-Bold': require('./assets/fonts/SFProText-Bold.otf'),
       'SFProText-Regular' : require('./assets/fonts/SFProText-Regular.otf'),
       'SFProDisplay-Medium' : require('./assets/fonts/SFProDisplay-Medium.otf'),
@@ -20,9 +21,8 @@ export default function App() {
 
   if (fontsLoaded) {
     return (
-      <LogIn />
-      //<Welcome />
-       //<JoinEvent />
+      //<LogIn />
+      <JoinEvent />
     )
   } else {
     return (

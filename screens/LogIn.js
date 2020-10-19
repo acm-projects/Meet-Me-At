@@ -11,8 +11,8 @@ export default function LogIn() {
       <Text style={[globalStyles.subTitle, { marginTop: 10 }]}>Welcome to</Text>
       <Text style={styles.appTitle}>Meet-Me-At</Text>
 
-      <TextInput style={[globalStyles.input, globalStyles.darkText, globalStyles.textBody, { width: 270} ]} placeholder= "Email" placeholderTextColor = "#D0D0D0" autoCapitalize = 'none' autoCorrect = 'false' />
-      <TextInput style={[globalStyles.input, globalStyles.darkText, globalStyles.textBody, { width: 270} ]} placeholder= "Password" placeholderTextColor = "#D0D0D0" autoCapitalize = 'none' autoCorrect = 'false' secureTextEntry = 'true'/>   
+      <TextInput style={[globalStyles.input, globalStyles.darkText, globalStyles.textBody, { width: 270} ]} placeholder= "Email" placeholderTextColor = "#D0D0D0" autoCapitalize = 'none' autoCorrect={false} />
+      <TextInput style={[globalStyles.input, globalStyles.darkText, globalStyles.textBody, { width: 270} ]} placeholder= "Password" placeholderTextColor = "#D0D0D0" autoCapitalize = 'none' autoCorrect = {false} secureTextEntry = {true}/>   
       <Text style={[globalStyles.textBody, globalStyles.darkText, { marginTop: 7, marginBottom: 15}]}>Forgot Password?</Text>
       
       <RoundButton style={{marginTop: 22, backgroundColor: '#FF6961'}} text="Login" onPress={ () => console.log("Login pressed")} />
