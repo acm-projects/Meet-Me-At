@@ -4,6 +4,7 @@ import { AppLoading } from 'expo'
 import LogIn from './screens/LogIn'
 import JoinEvent from './screens/JoinEvent'
 import Home from './screens/Home'
+import CreateEvent from './screens/CreateEvent'
 
 export default function App() {
   const getFonts = () => {
@@ -26,7 +27,8 @@ export default function App() {
     return (
       //<LogIn />
       //<JoinEvent />
-      <Home />
+      //<Home />
+      <CreateEvent />
     )
   } else {
     return (
