@@ -6,6 +6,8 @@ var ConnectionState = {
     CONNECTED: 2
 }
 
+//to test things just create collections by adding a document, then test methods on that document or others
+
 class dbInteraction {
     #connection_state = ConnectionState.DISCONNECTED;
     #client = undefined;
@@ -57,7 +59,8 @@ class dbInteraction {
             name: nm,
             username: uN,
             password: pw,
-            profilePicture: profilePic
+            profilePicture: profilePic,
+            eventList: [],
         });
     }
 
@@ -132,7 +135,8 @@ class dbInteraction {
             location: eventLocation,
             date: eventDate,
             startTime: eventStartTime,
-            endTime: eventEndTime
+            endTime: eventEndTime,
+            guestlist: []
         });
     }
 
@@ -231,6 +235,26 @@ class dbInteraction {
         if (!this.isConnected()) return;
         await coll.deleteOne({name: eventName});
     }
+
+    async addEventGuest(coll, eventName, user){
+        if (!this.isConnected()) return;
+        await coll.updateOne(
+            { name: eventName},
+            {
+                $push: {guestlist: user},
+            }
+        );
+    }
+
+    async addEventToUser(coll, uName, event){
+        if (!this.isConnected()) return;
+        await coll.updateOne(
+            {username: uName},
+            {
+                $push: {eventList: event},
+            }
+        );
+    }
   
 }
 
@@ -241,7 +265,7 @@ async function addThisUser(){
     try{
         await currentUser.connect();
         var coll = await currentUser.getCollection("mmaDB", "users");
-        await currentUser.addUser(coll, "Kobe Bryant", "MambaMentality", "numba24!", "kobepictures.com/24/mamba/");  
+        await currentUser.addUser(coll, "Array Man", "ArrayUsername", "ArrayTest123!", "jsonpics.com/arraytest");  
     } finally {
         currentUser.disconnect();
     }
@@ -339,11 +363,22 @@ async function deleteThisUser(){
     }   
 }
 
+async function addOneEventToUser(){
+    try{
+        var event = await getThisEvent();
+        await currentUser.connect();
+        var coll = await currentUser.getCollection("mmaDB", "users");
+        await currentUser.addEventToUser(coll, "ArrayUsername", event);
+    } finally {
+        currentUser.disconnect();
+    }
+}
+
 async function addThisEvent(){
     try{
         await currentEvent.connect();
         var coll = await currentEvent.getCollection("mmaDB", "events");
-        await currentEvent.addEvent(coll, "UniqueBash", "2416 Campbell St", "10/30/20", "1:00 pm", "3:00 pm");  
+        await currentEvent.addEvent(coll, "ArrayTestBash", "2416 Campbell St", "10/30/20", "1:00 pm", "3:00 pm");  
     } finally {
         currentEvent.disconnect();
     }
@@ -463,6 +498,20 @@ async function updateThisEventEndTime(){
     }   
 }
 
+//Array guestlist is filled with usernames rather than entire user objects to prevent infinite referencing (since both objects have arrays of the other kind of object)
+//Array eventList inside of user objects contains entire event objects
+async function addOneEventGuest(){
+    try{
+        var username = await getThisUsername();
+        await currentEvent.connect();
+        var coll = await currentEvent.getCollection("mmaDB", "events");
+        await currentEvent.addEventGuest(coll, "UniqueBash", username);
+    } finally {
+        currentEvent.disconnect();
+    }
+}
+
+
 
 
 //////////////////How to test methods////////////////
@@ -487,3 +536,5 @@ async function updateThisEventEndTime(){
 //updateThisEventEndTime()
 //updateThisEventLocation();
 //updateThisEventDate();
+//addOneEventGuest();
+//addOneEventToUser();
