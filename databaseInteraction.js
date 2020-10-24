@@ -13,7 +13,7 @@ class dbInteraction {
     #client = undefined;
 
     constructor() {
-        const uri = 'mongodb+srv://sammyo:AcmPJisHard%21@mmacluster.2ifqb.mongodb.net/<MeetMeAtDB>?retryWrites=true&w=majority';
+        const uri = //insert your URI here;
         this.#client = new mongo.MongoClient(uri, {useUnifiedTopology: true });
     }
 
