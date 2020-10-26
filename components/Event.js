@@ -2,17 +2,22 @@ import React from 'react'
 import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
 import { globalStyles } from '../styles/globalStyles'
 
-export default function Event({onPress, style}){
+const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
+export default function Event({ info, onPress, style}){
+    const event = JSON.parse(info);
+
+    const day = days[event.day - 1]
     return (
         <TouchableOpacity style={[styles.button, styles.container, style]} onPress={onPress} delayPressIn={0}>
             <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-                <Text style={[globalStyles.SFProText_Heavy, {fontSize: 24, color: '#fff'}]}>26</Text>
-                <Text style={[globalStyles.SFProText_Regular, {fontSize: 12, color: '#fff'}]}>Sat</Text>
+    <Text style={[globalStyles.SFProText_Heavy, {fontSize: 24, color: '#fff'}]}>{event.startDate.substr(event.startDate.indexOf('/') + 1, 2)}</Text>
+                <Text style={[globalStyles.SFProText_Regular, {fontSize: 12, color: '#fff'}]}>{ day }</Text>
             </View>
 
             <View style={{flex: 7, marginHorizontal: 10, justifyContent: 'center'}}>
-                <Text style={[globalStyles.SFProDisplay_Bold, {fontSize: 20, marginVertical: 1, color: '#fff'}]}>Event Title</Text>
-                <Text style={[globalStyles.SFProText_Light, {fontSize: 14, marginVertical: 1, color: '#fff'}]}>10:30 PM - 11:00 PM</Text>
+                <Text style={[globalStyles.SFProDisplay_Bold, {fontSize: 20, marginVertical: 1, color: '#fff'}]}>{ event.title }</Text>
+                <Text style={[globalStyles.SFProText_Light, {fontSize: 14, marginVertical: 1, color: '#fff'}]}>{event.startTime} - {event.endTime}</Text>
 
             </View>
         </TouchableOpacity>
