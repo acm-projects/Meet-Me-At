@@ -179,7 +179,7 @@ export default function CreateEvent() {
                     placeholderTextColor = "#D0D0D0"
                     style={{alignSelf: 'flex-start'}}/>
 
-        <RoundButton style={{backgroundColor: '#E4E4E4', marginTop: 150}} text="Save Event" onPress={ () => console.log("Save Event")} />
+        <RoundButton style={{backgroundColor: '#E4E4E4', marginTop: 70}} text="Save Event" onPress={ () => console.log("Save Event")} />
         <RoundButton style={{backgroundColor: '#FF6961', marginVertical: 15}} text="Cancel" onPress={ () => console.log("Cancel Event")} />
         </View>
     )

@@ -52,14 +52,14 @@ export default function App() {
         <NavigationContainer>
           {!userToken ? ( 
           <LogInStack.Navigator>
-            <LogInStack.Screen name="LogIn" component={LogIn} />
-            <LogInStack.Screen name="Join" component={JoinEvent} />
+            <LogInStack.Screen name="LogIn" component={LogIn} options={{headerTransparent: true, title: ''}}/>
 
           </LogInStack.Navigator>
           ) : (
             <HomeStack.Navigator>
-              <HomeStack.Screen name ="Home" component={Home} />
-              <HomeStack.Screen name = "CreateEvent" component={CreateEvent} />
+              <HomeStack.Screen name ="Home" component={Home} options={{headerTransparent: true, title: ''}}/>
+              <HomeStack.Screen name = "CreateEvent" component={CreateEvent} options={{headerTransparent: true, title: ''}}/>
+              <HomeStack.Screen name="Join" component={JoinEvent} options={{headerTransparent: true, title: ''}}/>
             </HomeStack.Navigator>
           ) } 
         </NavigationContainer>
@@ -68,7 +68,6 @@ export default function App() {
       //<JoinEvent />
       //<Home />
       //<CreateEvent />
-      //<Example />
     )
   } else {
     return (

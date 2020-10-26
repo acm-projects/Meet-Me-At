@@ -5,7 +5,7 @@ import Event from '../components/Event'
 
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
-export default function Home() {
+export default function Home({navigation}) {
     const [events, setEvents] = useState([
         { title: 'event #1', startDate: '10/31/20', endDate: '10/31/20', startTime: '3:00 PM', endTime:'4:00 PM', day: '6', about: 'about', host: 'yes'},
         { title: 'event #2', startDate: '11/15/20', endDate: '11/15/20', startTime: '3:00 PM', endTime:'4:00 PM', day: '7', about: 'about', host: 'yes'},
@@ -37,16 +37,6 @@ export default function Home() {
                 <Event style={{backgroundColor}} info = {json} onPress={ () => console.log("Join Pressed")} />
             )
         }
-        
-        // const backgroundColor = item.id === selectedId ? "#6e3b6e" : "#f9c2ff";
-    
-        // return (
-        //   <Item
-        //     item={item}
-        //     onPress={() => setSelectedId(item.id)}
-        //     style={{ backgroundColor }}
-        //   />
-        // );
       };
 
     return (
@@ -67,6 +57,17 @@ export default function Home() {
                 <TouchableOpacity onPress={ () => console.log("Button 3")} delayPressIn={0}>
                     <Text style={{paddingRight: 4}}>Host</Text>
                 </TouchableOpacity>
+            </View>
+
+            <View style={{display: 'flex', flexDirection: 'row', marginBottom: 8, marginTop: 8}}>
+                <TouchableOpacity onPress={ () => navigation.navigate('CreateEvent')} delayPressIn={0}>
+                    <Text style={{backgroundColor: '#FF6961', padding: 5, marginLeft: 4, marginRight: 10, color: '#fff', width: 100, textAlign: 'center'}}>Create Event</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={ () => navigation.navigate('Join')} delayPressIn={0}>
+                    <Text style={{backgroundColor: '#FF6961', padding: 5, marginRight: 8, color: '#fff', width: 100, textAlign: 'center'}}>Join Event</Text>
+                </TouchableOpacity>
+
             </View>
 
             <FlatList
