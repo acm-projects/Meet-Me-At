@@ -37,6 +37,7 @@ export default function CreateEvent() {
 
     const confirmEndDate = (date) => {
         //console.warn("A date has been picked: ", date);
+        console.log(date);
         onChangeEndDate(date.toLocaleDateString());
         closeEndDatePicker();
     };
@@ -55,6 +56,7 @@ export default function CreateEvent() {
 
     const confirmStartTime = (time) => {
         //console.warn("A date has been picked: ", date);
+        console.log(time);
         onChangeStartTime(time.toLocaleTimeString(navigator.language, {hour:  "numeric",
         minute: "numeric"}));
         closeStartTimePicker();
