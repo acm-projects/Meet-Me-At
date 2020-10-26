@@ -5,6 +5,7 @@ import LogIn from './screens/LogIn'
 import JoinEvent from './screens/JoinEvent'
 import Home from './screens/Home'
 import CreateEvent from './screens/CreateEvent'
+import Example from './screens/Example'
 
 export default function App() {
   const getFonts = () => {
@@ -29,6 +30,7 @@ export default function App() {
       //<JoinEvent />
       //<Home />
       <CreateEvent />
+      //<Example />
     )
   } else {
     return (
