@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { StyleSheet, Text, View, TextInput, Image } from 'react-native';
 import RoundButton from '../components/RoundButton'
 import { globalStyles } from '../styles/globalStyles'
-
-export default function LogIn() {
-  
+import { AuthContext } from '../context'
+export default function LogIn({ navigation }) {
+  const { signIn } = useContext(AuthContext);
   return (
     <View style={[globalStyles.container, globalStyles.mainBackground]}>
       <Image style={{marginBottom: 5}}source={require('../assets/images/redIcon.png')} />          
@@ -15,9 +15,9 @@ export default function LogIn() {
       <TextInput style={[globalStyles.input, globalStyles.darkText, globalStyles.textBody, { width: 270} ]} placeholder= "Password" placeholderTextColor = "#D0D0D0" autoCapitalize = 'none' autoCorrect = {false} secureTextEntry = {true}/>   
       <Text style={[globalStyles.textBody, globalStyles.darkText, { marginTop: 7, marginBottom: 15}]}>Forgot Password?</Text>
       
-      <RoundButton style={{marginTop: 22, backgroundColor: '#FF6961'}} text="Login" onPress={ () => console.log("Login pressed")} />
+      <RoundButton style={{marginTop: 22, backgroundColor: '#FF6961'}} text="Login" onPress={ () => signIn() } />
       <Text style = {[globalStyles.lightText, globalStyles.textBody, { margin: 20 }]}>────────  or  ────────</Text>
-      <RoundButton style={{backgroundColor: '#E4E4E4'}} text="Create Account" onPress={ () => console.log("Create Account Pressed")} />
+      <RoundButton style={{backgroundColor: '#E4E4E4'}} text="Create Account" onPress={ () => navigation.navigate("Join")} />
     </View>
   )
 };

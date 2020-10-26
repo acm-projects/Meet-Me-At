@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState, useMemo } from 'react';
 import * as Font from 'expo-font';
 import { AppLoading } from 'expo'
 import LogIn from './screens/LogIn'
@@ -7,7 +7,10 @@ import Home from './screens/Home'
 import CreateEvent from './screens/CreateEvent'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { AuthContext } from './context'
 
+const LogInStack = createStackNavigator();
+const HomeStack = createStackNavigator();
 
 export default function App() {
   const getFonts = () => {
@@ -25,15 +28,42 @@ export default function App() {
 
 
   const[fontsLoaded, setFontsLoaded] = useState(false);
-  const Stack = createStackNavigator();
+
   
-  if (fontsLoaded) {
+    const [userToken, setUserToken] = useState(null);
+
+    const authContext = useMemo(() => {
+      return {
+        signIn: () => {
+          setUserToken('signed');
+        },
+        // signUp: () => {
+
+        // },
+        // signOut: () => {
+
+        // }
+      };
+    }, []);
+
+    if (fontsLoaded) {
     return (
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="Home" component={LogIn} />
-        </Stack.Navigator>
-      </NavigationContainer>
+     <AuthContext.Provider value={authContext}>
+        <NavigationContainer>
+          {!userToken ? ( 
+          <LogInStack.Navigator>
+            <LogInStack.Screen name="LogIn" component={LogIn} />
+            <LogInStack.Screen name="Join" component={JoinEvent} />
+
+          </LogInStack.Navigator>
+          ) : (
+            <HomeStack.Navigator>
+              <HomeStack.Screen name ="Home" component={Home} />
+              <HomeStack.Screen name = "CreateEvent" component={CreateEvent} />
+            </HomeStack.Navigator>
+          ) } 
+        </NavigationContainer>
+       </AuthContext.Provider> 
       //<LogIn />
       //<JoinEvent />
       //<Home />
