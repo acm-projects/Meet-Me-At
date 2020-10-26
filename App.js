@@ -5,7 +5,9 @@ import LogIn from './screens/LogIn'
 import JoinEvent from './screens/JoinEvent'
 import Home from './screens/Home'
 import CreateEvent from './screens/CreateEvent'
-import Example from './screens/Example'
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
 
 export default function App() {
   const getFonts = () => {
@@ -23,13 +25,19 @@ export default function App() {
 
 
   const[fontsLoaded, setFontsLoaded] = useState(false);
-
+  const Stack = createStackNavigator();
+  
   if (fontsLoaded) {
     return (
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Home" component={LogIn} />
+        </Stack.Navigator>
+      </NavigationContainer>
       //<LogIn />
       //<JoinEvent />
       //<Home />
-      <CreateEvent />
+      //<CreateEvent />
       //<Example />
     )
   } else {
