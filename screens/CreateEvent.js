@@ -179,7 +179,7 @@ export default function CreateEvent({navigation}) {
                     placeholderTextColor = "#D0D0D0"
                     style={{alignSelf: 'flex-start'}}/>
 
-        <RoundButton style={{backgroundColor: '#E4E4E4', marginTop: 100}} text="Save Event" onPress={ () => navigation.navigate('Home'))} />
+        <RoundButton style={{backgroundColor: '#E4E4E4', marginTop: 100}} text="Save Event" onPress={ () => navigation.navigate('Home')} />
         {/* <RoundButton style={{backgroundColor: '#FF6961', marginVertical: 15}} text="Cancel" onPress={ () => console.log("Cancel Event")} /> */}
         </View>
     )
