@@ -4,9 +4,9 @@ import RoundButton from '../components/RoundButton'
 import InvitationButton from '../components/InvitationButton'
 import { globalStyles } from '../styles/globalStyles'
 
-export default function JoinEvent() {
+export default function JoinEvent({navigation}) {
     return(
-        <View style={[globalStyles.container, {backgroundColor: '#e4e4e4'}]}>
+        <View style={[globalStyles.container, {backgroundColor: '#e4e4e4', marginTop: 15}]}>
             
             <View style={[styles.box, styles.container1]}>
                 <Text style={globalStyles.darkHeader}>Your Invitations</Text>

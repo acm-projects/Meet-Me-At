@@ -4,7 +4,7 @@ import RoundButton from '../components/RoundButton'
 import { globalStyles } from '../styles/globalStyles'
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 
-export default function CreateEvent() {
+export default function CreateEvent({navigation}) {
     //**** handle start date picker ****//
     const [showStartDatePicker, handleStartDatePicker] = useState(false);
     const [startDate, onChangeStartDate] = useState("");
@@ -82,7 +82,7 @@ export default function CreateEvent() {
     };
 
     return (
-        <View style={[globalStyles.mainBackground, {paddingVertical: 50, paddingHorizontal: 15, flex: 1, alignItems: 'center'}]}>
+        <View style={[globalStyles.mainBackground, {paddingVertical: 50, paddingHorizontal: 15, flex: 1, alignItems: 'center', marginTop: 15}]}>
             <TextInput
                 style={[globalStyles.input, globalStyles.darkText,{fontFamily: "SFProDisplay-Bold",fontSize: 32, alignSelf: 'stretch'}]}
                 placeholder= "Event Title"
@@ -179,8 +179,8 @@ export default function CreateEvent() {
                     placeholderTextColor = "#D0D0D0"
                     style={{alignSelf: 'flex-start'}}/>
 
-        <RoundButton style={{backgroundColor: '#E4E4E4', marginTop: 70}} text="Save Event" onPress={ () => console.log("Save Event")} />
-        <RoundButton style={{backgroundColor: '#FF6961', marginVertical: 15}} text="Cancel" onPress={ () => console.log("Cancel Event")} />
+        <RoundButton style={{backgroundColor: '#E4E4E4', marginTop: 100}} text="Save Event" onPress={ () => navigation.navigate('Home'))} />
+        {/* <RoundButton style={{backgroundColor: '#FF6961', marginVertical: 15}} text="Cancel" onPress={ () => console.log("Cancel Event")} /> */}
         </View>
     )
 

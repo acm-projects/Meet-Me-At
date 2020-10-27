@@ -5,6 +5,7 @@ import LogIn from './screens/LogIn'
 import JoinEvent from './screens/JoinEvent'
 import Home from './screens/Home'
 import CreateEvent from './screens/CreateEvent'
+import Profile from './screens/Profile'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { AuthContext } from './context'
@@ -60,6 +61,7 @@ export default function App() {
               <HomeStack.Screen name ="Home" component={Home} options={{headerTransparent: true, title: ''}}/>
               <HomeStack.Screen name = "CreateEvent" component={CreateEvent} options={{headerTransparent: true, title: ''}}/>
               <HomeStack.Screen name="Join" component={JoinEvent} options={{headerTransparent: true, title: ''}}/>
+              <HomeStack.Screen name="Profile" component={Profile} options={{headerTransparent: true, title: ''}}/>
             </HomeStack.Navigator>
           ) } 
         </NavigationContainer>
@@ -68,6 +70,7 @@ export default function App() {
       //<JoinEvent />
       //<Home />
       //<CreateEvent />
+      //<Profile />
     )
   } else {
     return (
