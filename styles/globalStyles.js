@@ -9,6 +9,9 @@ export const globalStyles = StyleSheet.create({
     mainBackground: {
         backgroundColor: '#FCFCFC'
     },
+    darkGrayBackground: {
+        backgroundColor: '#D0D0D0'
+    },
     //fonts
     SFProText_Bold: {
         fontFamily: "SFProText-Bold"
