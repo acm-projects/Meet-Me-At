@@ -10,8 +10,8 @@ export default function Home({navigation}) {
         { title: 'event #1', startDate: '10/31/20', endDate: '10/31/20', startTime: '3:00 PM', endTime:'4:00 PM', day: '6', about: 'about', host: 'yes'},
         { title: 'event #2', startDate: '11/15/20', endDate: '11/15/20', startTime: '3:00 PM', endTime:'4:00 PM', day: '7', about: 'about', host: 'yes'},
         { title: 'event #3', startDate: '11/16/20', endDate: '11/16/20', startTime: '3:00 PM', endTime:'4:00 PM', day: '1', about: 'about', host: 'no'},
-        { title: 'event #2', startDate: '12/15/20', endDate: '12/15/20', startTime: '3:00 PM', endTime:'4:00 PM', day: '2', about: 'about', host: 'yes'},
-        { title: 'event #2', startDate: '1/01/20', endDate: '1/15/20', startTime: '3:00 PM', endTime:'4:00 PM', day: '5', about: 'about', host: 'no'}
+        { title: 'event #4', startDate: '12/15/20', endDate: '12/15/20', startTime: '3:00 PM', endTime:'4:00 PM', day: '2', about: 'about', host: 'yes'},
+        { title: 'event #5', startDate: '1/01/20', endDate: '1/15/20', startTime: '3:00 PM', endTime:'4:00 PM', day: '5', about: 'about', host: 'no'}
     ])
 
     let monthDisplay = 0;
@@ -29,19 +29,21 @@ export default function Home({navigation}) {
                     borderBottomWidth: 1}}>
                     <Text style={{padding: 3}}> { months[monthDisplay - 1] }</Text>
                 </View>
-                <Event style={{backgroundColor}} info = {json} onPress={ () => console.log("Join Pressed")} />
+                <Event style={{backgroundColor}} info = {json} onPress={ () => console.log(json.title)} />
             </View>
             )
         } else {
             return(
-                <Event style={{backgroundColor}} info = {json} onPress={ () => console.log("Join Pressed")} />
+                <Event style={{backgroundColor}} info = {json} onPress={ () => console.log("event pressed")} />
             )
         }
       };
 
     return (
         <SafeAreaView style={[styles.localContainer, globalStyles.mainBackground]}>
-
+            <TouchableOpacity style={{alignItems: 'center', backgroundColor: '#e4e4e4', top:43, right: 15, position: 'absolute', height: 50, width: 50, borderRadius: 10, justifyContent: 'center'}} onPress={ () => navigation.navigate('Profile')} delayPressIn={0}>
+                    <Text style={{fontSize: 25}}>P</Text>
+            </TouchableOpacity>
             
             <Text style={[globalStyles.darkHeader]}>Events</Text>
 
