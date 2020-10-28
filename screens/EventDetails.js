@@ -28,8 +28,6 @@ export default function App() {
          <Text style={styles.state} > California, United States </Text>
          <Text style={styles.About} > About </Text>
          <Text style={styles.aboutText} > The quick brown fox jumped over the log. This is an example sentence of what you could put in here. It is also scrollable. </Text>
-         <Text style={styles.location} > Location </Text>
-
       </View>
 
    );
