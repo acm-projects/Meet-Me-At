@@ -4,8 +4,10 @@ import RoundButton from '../components/RoundButton'
 import { globalStyles } from '../styles/globalStyles'
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 
-export default function CreateEvent({navigation}) {
+export default function CreateEvent({ navigation}) {
     //**** handle start date picker ****//
+    //console.log(info);
+
     const [showStartDatePicker, handleStartDatePicker] = useState(false);
     const [startDate, onChangeStartDate] = useState("");
 
@@ -100,6 +102,7 @@ export default function CreateEvent({navigation}) {
                         onFocus={openStartDatePicker}
                         value={startDate}
                     />
+                
                     <DateTimePickerModal
                         isVisible={showStartDatePicker}
                         mode="date"
