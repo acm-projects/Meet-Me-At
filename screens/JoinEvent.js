@@ -6,13 +6,13 @@ import { globalStyles } from '../styles/globalStyles'
 
 export default function JoinEvent({navigation}) {
     return(
-        <View style={[globalStyles.container, {backgroundColor: '#e4e4e4', marginTop: 15}]}>
+        <View style={[globalStyles.container, {backgroundColor: '#e4e4e4'}]}>
             
             <View style={[styles.box, styles.container1]}>
                 <Text style={globalStyles.darkHeader}>Your Invitations</Text>
                 <InvitationButton eventTitle="Event Title" eventDate="Saturday, October 31" onPress={ () => console.log("Event Invitation Pressed")}/>
                 <InvitationButton eventTitle="Event Title" eventDate="Saturday, October 31" onPress={ () => console.log("Event Invitation Pressed")}/>
-                <InvitationButton eventTitle="Event Title" eventDate="Saturday, October 31" onPress={ () => console.log("Event Invitation Pressed")}/>
+                {/* <InvitationButton eventTitle="Event Title" eventDate="Saturday, October 31" onPress={ () => console.log("Event Invitation Pressed")}/> */}
             </View>
             
             <View style={[styles.box, styles.container2]}>
@@ -37,14 +37,15 @@ const styles = StyleSheet.create({
         padding: 15,
         padding: 15,
         borderRadius: 10,
-        margin: 12
+        margin: 10
     },
     container1: {
         width: 340,
-        height: 450,
-        marginTop: 20,
+        height: 440,
+        marginTop: 60,
     },
     container2: {
+        marginTop: 12,
         width: 340,
         height: 220,
     }

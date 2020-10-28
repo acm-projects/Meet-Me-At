@@ -51,8 +51,18 @@ export default function Home({navigation}) {
                     <Text style={{fontSize: 25}}>P</Text>
             </TouchableOpacity>
             
-            <Text style={[globalStyles.darkHeader]}>Events</Text>
+            <Text style={[globalStyles.darkHeader, {marginTop: 5}]}>Events</Text>
             
+            <View style={{display: 'flex', flexDirection: 'row', marginBottom: 10, marginTop: 3}}>
+                <TouchableOpacity onPress={ () => navigation.navigate('CreateEvent')} delayPressIn={0}>
+                    <Text style={{backgroundColor: '#453F3E', padding: 5, marginLeft: 4, marginRight: 10, color: '#fff', width: 100, textAlign: 'center'}}>Create Event</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={ () => navigation.navigate('Join')} delayPressIn={0}>
+                    <Text style={{backgroundColor: '#453F3E', padding: 5, marginRight: 8, color: '#fff', width: 100, textAlign: 'center'}}>Join Event</Text>
+                </TouchableOpacity>
+
+            </View>
 
             <View style={{display: 'flex', flexDirection: 'row', marginVertical: 5, alignSelf: 'center'}}>
                 <TouchableOpacity style={[guestView ? styles.viewButton: styles.offViewButton, {paddingLeft: 13, borderBottomLeftRadius: 10, borderTopLeftRadius: 10}]} 
@@ -84,17 +94,6 @@ export default function Home({navigation}) {
                 delayPressIn={0}>
                     <Text style={{paddingVertical: 5, paddingLeft: 12}}>Host</Text>
                 </TouchableOpacity>
-            </View>
-
-            <View style={{display: 'flex', flexDirection: 'row', marginBottom: 8, marginTop: 8}}>
-                <TouchableOpacity onPress={ () => navigation.navigate('CreateEvent')} delayPressIn={0}>
-                    <Text style={{backgroundColor: '#e4e4e4', padding: 5, marginLeft: 4, marginRight: 10, color: '#fff', width: 100, textAlign: 'center'}}>Create Event</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity onPress={ () => navigation.navigate('Join')} delayPressIn={0}>
-                    <Text style={{backgroundColor: '#d0d0d0', padding: 5, marginRight: 8, color: '#000', width: 100, textAlign: 'center'}}>Join Event</Text>
-                </TouchableOpacity>
-
             </View>
 
             <FlatList

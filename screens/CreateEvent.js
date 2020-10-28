@@ -82,105 +82,105 @@ export default function CreateEvent({navigation}) {
     };
 
     return (
-        <View style={[globalStyles.mainBackground, {paddingVertical: 50, paddingHorizontal: 15, flex: 1, alignItems: 'center', marginTop: 15}]}>
-            <TextInput
-                style={[globalStyles.input, globalStyles.darkText,{fontFamily: "SFProDisplay-Bold",fontSize: 32, alignSelf: 'stretch'}]}
-                placeholder= "Event Title"
-                placeholderTextColor = "#D0D0D0"
-                autoCapitalize = 'none' 
-                autoCorrect={false} 
-            />
-            
-            <View style={{display: 'flex', flexDirection: 'row'}}>
-                <TextInput style={[globalStyles.input, {flex: 1, marginRight: 10}]}
-                    placeholder= "Start Date"
+        <View style={[globalStyles.mainBackground, {paddingTop: 62, paddingHorizontal: 15, flex: 1, alignItems: 'center', marginTop: 15}]}>
+                <TextInput
+                    style={[globalStyles.input, globalStyles.darkText,{fontFamily: "SFProDisplay-Bold",fontSize: 32, alignSelf: 'stretch'}]}
+                    placeholder= "Event Title"
                     placeholderTextColor = "#D0D0D0"
                     autoCapitalize = 'none' 
                     autoCorrect={false} 
-                    onFocus={openStartDatePicker}
-                    value={startDate}
-                />
-                <DateTimePickerModal
-                    isVisible={showStartDatePicker}
-                    mode="date"
-                    onConfirm={confirmStartDate}
-                    onCancel={closeStartDatePicker}
                 />
                 
-                <TextInput style={[globalStyles.input, {flex: 1, marginLeft: 10}]}
-                    placeholder= "End Date"
-                    placeholderTextColor = "#D0D0D0"
-                    autoCapitalize = 'none' 
-                    autoCorrect={false} 
-                    onFocus={openEndDatePicker}
-                    value={endDate}
+                <View style={{display: 'flex', flexDirection: 'row'}}>
+                    <TextInput style={[globalStyles.input, {flex: 1, marginRight: 10}]}
+                        placeholder= "Start Date"
+                        placeholderTextColor = "#D0D0D0"
+                        autoCapitalize = 'none' 
+                        autoCorrect={false} 
+                        onFocus={openStartDatePicker}
+                        value={startDate}
+                    />
+                    <DateTimePickerModal
+                        isVisible={showStartDatePicker}
+                        mode="date"
+                        onConfirm={confirmStartDate}
+                        onCancel={closeStartDatePicker}
+                    />
+                    
+                    <TextInput style={[globalStyles.input, {flex: 1, marginLeft: 10}]}
+                        placeholder= "End Date"
+                        placeholderTextColor = "#D0D0D0"
+                        autoCapitalize = 'none' 
+                        autoCorrect={false} 
+                        onFocus={openEndDatePicker}
+                        value={endDate}
+                        />
+
+                    <DateTimePickerModal
+                        isVisible={showEndDatePicker}
+                        mode="date"
+                        onConfirm={confirmEndDate}
+                        onCancel={closeEndDatePicker}
                     />
 
-                <DateTimePickerModal
-                    isVisible={showEndDatePicker}
-                    mode="date"
-                    onConfirm={confirmEndDate}
-                    onCancel={closeEndDatePicker}
-                />
+                </View>
 
-            </View>
-
-            <View style={{display: 'flex', flexDirection: 'row'}}>
-                <TextInput style={[globalStyles.input, {flex: 1, marginRight: 10}]}
-                    placeholder= "Start Time"
-                    placeholderTextColor = "#D0D0D0"
-                    autoCapitalize = 'none' 
-                    autoCorrect={false} 
-                    onFocus={openStartTimePicker}
-                    value={startTime}
+                <View style={{display: 'flex', flexDirection: 'row'}}>
+                    <TextInput style={[globalStyles.input, {flex: 1, marginRight: 10}]}
+                        placeholder= "Start Time"
+                        placeholderTextColor = "#D0D0D0"
+                        autoCapitalize = 'none' 
+                        autoCorrect={false} 
+                        onFocus={openStartTimePicker}
+                        value={startTime}
+                        />
+                    <DateTimePickerModal
+                        isVisible={showStartTimePicker}
+                        mode="time"
+                        onConfirm={confirmStartTime}
+                        onCancel={closeStartTimePicker}
                     />
-                <DateTimePickerModal
-                    isVisible={showStartTimePicker}
-                    mode="time"
-                    onConfirm={confirmStartTime}
-                    onCancel={closeStartTimePicker}
-                />
 
-                <TextInput style={[globalStyles.input, {flex: 1, marginLeft: 10}]}
-                    placeholder= "End Time"
-                    placeholderTextColor = "#D0D0D0"
-                    autoCapitalize = 'none' 
-                    autoCorrect={false} 
-                    onFocus={openEndTimePicker}
-                    value={endTime}
+                    <TextInput style={[globalStyles.input, {flex: 1, marginLeft: 10}]}
+                        placeholder= "End Time"
+                        placeholderTextColor = "#D0D0D0"
+                        autoCapitalize = 'none' 
+                        autoCorrect={false} 
+                        onFocus={openEndTimePicker}
+                        value={endTime}
+                        />
+                    <DateTimePickerModal
+                        isVisible={showEndTimePicker}
+                        mode="time"
+                        onConfirm={confirmEndTime}
+                        onCancel={closeEndTimePicker}
                     />
-                <DateTimePickerModal
-                    isVisible={showEndTimePicker}
-                    mode="time"
-                    onConfirm={confirmEndTime}
-                    onCancel={closeEndTimePicker}
-                />
-            </View>
+                </View>
 
-            <TextInput
-                    style={[globalStyles.input, globalStyles.darkText,{ alignSelf: 'stretch'}]}
-                    placeholder= "Location"
-                    placeholderTextColor = "#D0D0D0"
-                    autoCapitalize = 'none' 
-                    autoCorrect={false} 
-                />
+                <TextInput
+                        style={[globalStyles.input, globalStyles.darkText,{ alignSelf: 'stretch'}]}
+                        placeholder= "Location"
+                        placeholderTextColor = "#D0D0D0"
+                        autoCapitalize = 'none' 
+                        autoCorrect={false} 
+                    />
 
-            <Text style={[globalStyles.subTitle, globalStyles.darkText, {fontFamily: "SFProDisplay-Bold", fontSize: 20, alignSelf: 'flex-start', marginTop: 20, marginBottom: 5}]}>About..</Text>
-            <TextInput multiline = {true}
-                    numberOfLines = {6}
-                    placeholder= "About..."
-                    placeholderTextColor = "#D0D0D0"
-                    style={{alignSelf: 'flex-start', height: 100}}/>
+                <Text style={[globalStyles.subTitle, globalStyles.darkText, {fontFamily: "SFProDisplay-Bold", fontSize: 20, alignSelf: 'flex-start', marginTop: 20, marginBottom: 5}]}>About..</Text>
+                <TextInput multiline = {true}
+                        numberOfLines = {6}
+                        placeholder= "About..."
+                        placeholderTextColor = "#D0D0D0"
+                        style={{alignSelf: 'flex-start', height: 100}}/>
 
-            <Text style={[globalStyles.subTitle, globalStyles.darkText, {fontFamily: "SFProDisplay-Bold", fontSize: 20, alignSelf: 'flex-start', marginTop: 20, marginBottom: 5}]}>Add Guests</Text>
-            <TextInput multiline = {true}
-                    numberOfLines = {6}
-                    placeholder= "Enter Email"
-                    placeholderTextColor = "#D0D0D0"
-                    style={{alignSelf: 'flex-start'}}/>
+                <Text style={[globalStyles.subTitle, globalStyles.darkText, {fontFamily: "SFProDisplay-Bold", fontSize: 20, alignSelf: 'flex-start', marginTop: 20, marginBottom: 5}]}>Add Guests</Text>
+                <TextInput multiline = {true}
+                        numberOfLines = {6}
+                        placeholder= "Enter Email"
+                        placeholderTextColor = "#D0D0D0"
+                        style={{alignSelf: 'flex-start'}}/>
 
-        <RoundButton style={{backgroundColor: '#E4E4E4', marginTop: 100}} text="Save Event" onPress={ () => navigation.navigate('Home')} />
-        {/* <RoundButton style={{backgroundColor: '#FF6961', marginVertical: 15}} text="Cancel" onPress={ () => console.log("Cancel Event")} /> */}
+            <RoundButton style={{backgroundColor: '#E4E4E4', top: 163}} text="Save Event" onPress={ () => navigation.navigate('Home')} />
+            {/* <RoundButton style={{backgroundColor: '#FF6961', marginVertical: 15}} text="Cancel" onPress={ () => console.log("Cancel Event")} /> */}
         </View>
     )
 

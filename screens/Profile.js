@@ -21,11 +21,11 @@ export default function Profile({navigation}) {
             <TextInput style={[globalStyles.input, globalStyles.darkText, globalStyles.textBody, { alignSelf: 'stretch', marginBottom: 3} ]} defaultValue= "johndoe@gmail.com" autoCapitalize = 'none' autoCorrect={false} />
             <Text style={[globalStyles.lightText, { fontSize: 12}]}>Email</Text>
             <TextInput style={[globalStyles.input, globalStyles.darkText, globalStyles.textBody, { alignSelf: 'stretch', marginBottom: 3} ]} defaultValue= "password" autoCapitalize = 'none' autoCorrect={false} secureTextEntry={true}/>
-            <Text style={[globalStyles.lightText, { fontSize: 12}]}>Password</Text>
+            <Text style={[globalStyles.lightText, { fontSize: 12, marginBottom: 38}]}>Password</Text>
 
-            <RoundButton style={{backgroundColor: '#E4E4E4', top: 45, marginTop: 10, alignSelf: 'center'}} text="Save" onPress={ () => navigation.navigate("Home")} />
-            <RoundButton style={{backgroundColor: '#FF6961', marginTop: 10, top: 47, alignSelf: 'center'}} text="Log Out" onPress={ () => signOut()} />
-            <Text style={[globalStyles.textBody, globalStyles.darkText, { marginTop: 5, marginBottom: 15, alignSelf: 'center', top: 50}]}>Delete Account?</Text>
+            <RoundButton style={{backgroundColor: '#E4E4E4', marginVertical: 10, alignSelf: 'center'}} text="Save" onPress={ () => navigation.navigate("Home")} />
+            <RoundButton style={{backgroundColor: '#FF6961', marginTop: 2, alignSelf: 'center'}} text="Log Out" onPress={ () => signOut()} />
+            <Text style={[globalStyles.textBody, globalStyles.darkText, { marginTop: 10, marginBottom: 15, alignSelf: 'center'}]}>Delete Account?</Text>
         </View>
     )
 };
