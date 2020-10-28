@@ -28,8 +28,8 @@ export default function App() {
     return (
       //<LogIn />
       //<JoinEvent />
-      //<EventDetails />
-      <SignUpV2 />
+      <EventDetails />
+      //<SignUpV2 />
     )
   } else {
     return (

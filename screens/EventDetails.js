@@ -19,14 +19,15 @@ export default function App() {
    return(
       <View>
          <Text style={styles.eventDetails} > Event Details </Text>
+         <Text style={styles.user} > by User </Text>
          <Text style={styles.when} > When </Text>
          <Text style={styles.date} > Fri, 28 September 2020 </Text>
          <Text style={styles.time} > 5PM - 10PM CST </Text>
          <Text style={styles.addCalendar} > Add to Calendar </Text>
          <Text style={styles.place} > San Diego </Text>
-         <Text style={styles.location} > Location </Text>
-         <Text style={styles.location} > Location </Text>
-         <Text style={styles.location} > Location </Text>
+         <Text style={styles.state} > California, United States </Text>
+         <Text style={styles.About} > About </Text>
+         <Text style={styles.aboutText} > The quick brown fox jumped over the log. This is an example sentence of what you could put in here. It is also scrollable. </Text>
          <Text style={styles.location} > Location </Text>
 
       </View>
@@ -52,6 +53,18 @@ const styles = StyleSheet.create({
 
       color: "#000000"
 
+   },
+   user: {
+      width: 144,
+      height: 19,
+      left: 16,
+      top: 95,
+
+      position: "absolute",
+      fontFamily: 'SFProDisplay-Regular',
+      fontSize: 20,
+
+      color: "#737373",
    },
    when: {
       width: 277,
@@ -114,6 +127,18 @@ const styles = StyleSheet.create({
       color: "#000000",
    },
    place: {
+      width: 347,
+      height: 27,
+      left: 16,
+      top: 406,
+
+      position: "absolute",
+      fontFamily: 'SFProDisplay-Regular',
+      fontSize: 24,
+
+      color: "#000000",
+   },
+   state: {
       width: 270,
       height: 26,
       left: 16,
@@ -121,8 +146,37 @@ const styles = StyleSheet.create({
 
       position: "absolute",
       fontFamily: 'SFProDisplay-Regular',
-      fontSize: 18,
+      fontSize: 24,
+
+      position: "absolute",
+      fontFamily: 'SFProDisplay-Regular',
+      fontSize: 20,
 
       color: "#737373",
+
+   },
+   About : {
+      width: 277,
+      height: 58,
+      left: 16,
+      top: 500,
+
+      position: "absolute",
+      fontFamily: 'SFProDisplay-Regular',
+      fontSize: 36,
+
+      color: "#000000",
+   },
+   aboutText : {
+      width: 347,
+      height: 131,
+      left: 16,
+      top: 558,
+
+      position: "absolute",
+      fontFamily: 'SFProDisplay-Regular',
+      fontSize: 22,
+
+      color: "#000000",
    },
 })
