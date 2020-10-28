@@ -3,6 +3,8 @@ import * as Font from 'expo-font';
 import { AppLoading } from 'expo'
 import LogIn from './screens/LogIn'
 import JoinEvent from './screens/JoinEvent'
+import EventDetails from './screens/EventDetails'
+import SignUpV2 from './screens/SignUpV2'
 
 export default function App() {
   const getFonts = () => {
@@ -12,7 +14,10 @@ export default function App() {
       'SFProText-Bold': require('./assets/fonts/SFProText-Bold.otf'),
       'SFProText-Regular' : require('./assets/fonts/SFProText-Regular.otf'),
       'SFProDisplay-Medium' : require('./assets/fonts/SFProDisplay-Medium.otf'),
-      'PermanentMarker-Regular' : require('./assets/fonts/PermanentMarker-Regular.ttf')
+      'PermanentMarker-Regular' : require('./assets/fonts/PermanentMarker-Regular.ttf'),
+      'sf-pro-display-semibold' : require('./assets/fonts/SF-Pro-Display-Semibold.otf'),
+      'sf-pro-display-light': require('./assets/fonts/SF-Pro-Display-Light.otf'),
+      'SFProDisplay-Thin': require('./assets/fonts/SF-Pro-Display-Thin.otf')
     })
   };
 
@@ -22,7 +27,9 @@ export default function App() {
   if (fontsLoaded) {
     return (
       //<LogIn />
-      <JoinEvent />
+      //<JoinEvent />
+      //<EventDetails />
+      <SignUpV2 />
     )
   } else {
     return (
