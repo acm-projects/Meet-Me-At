@@ -41,9 +41,9 @@ export default function App() {
         // signUp: () => {
 
         // },
-        // signOut: () => {
-
-        // }
+        signOut: () => {
+          setUserToken(null);
+        }
       };
     }, []);
 
