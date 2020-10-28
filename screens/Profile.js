@@ -7,10 +7,6 @@ import { AuthContext } from '../context'
 export default function Profile({navigation}) {
     const { signOut } = useContext(AuthContext);
 
-    const handleLogOut = () => {
-       
-    };
-
     return(
         <View style={[{flex: 1, padding: 25}, globalStyles.mainBackground]}>
             <Image style={{alignSelf: 'center', height: 150, width: 150, borderRadius: 25, marginBottom: 40, position: 'relative', marginTop: 40, top: 20}}source={require('../assets/images/blue-image.jpg')} /> 
