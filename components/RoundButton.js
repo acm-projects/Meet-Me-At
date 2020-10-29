@@ -6,7 +6,7 @@ export default function RoundButton({ text, onPress, style }){
     return (
         <TouchableOpacity onPress={onPress} delayPressIn={0}>
             <View style={[styles.button, style]}>
-                <Text style={[styles.buttonText, globalStyles.SFProText_Bold]}>{ text }</Text>
+                <Text style={[styles.buttonText, globalStyles.SFProDisplay_Bold]}>{ text }</Text>
             </View>
         </TouchableOpacity>
     )
@@ -18,7 +18,14 @@ const styles = StyleSheet.create({
         width: 270,
         height: 50,
         justifyContent: 'center',
-        alignSelf: 'center'
+        alignSelf: 'center',
+        // shadowOpacity: 0.1,
+        // shadowRadius: 10,
+        // shadowOffset: {
+        //     width: -5,
+        //     height: 10
+        //   },
+        // shadowColor: '#453F3E'
     },
     buttonText: {
         color: '#453F3E',

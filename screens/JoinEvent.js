@@ -4,19 +4,19 @@ import RoundButton from '../components/RoundButton'
 import InvitationButton from '../components/InvitationButton'
 import { globalStyles } from '../styles/globalStyles'
 
-export default function JoinEvent() {
+export default function JoinEvent({navigation}) {
     return(
         <View style={[globalStyles.container, {backgroundColor: '#e4e4e4'}]}>
             
             <View style={[styles.box, styles.container1]}>
-                <Text style={[globalStyles.darkText, styles.header]}>Your Invitations</Text>
+                <Text style={globalStyles.darkHeader}>Your Invitations</Text>
                 <InvitationButton eventTitle="Event Title" eventDate="Saturday, October 31" onPress={ () => console.log("Event Invitation Pressed")}/>
                 <InvitationButton eventTitle="Event Title" eventDate="Saturday, October 31" onPress={ () => console.log("Event Invitation Pressed")}/>
-                <InvitationButton eventTitle="Event Title" eventDate="Saturday, October 31" onPress={ () => console.log("Event Invitation Pressed")}/>
+                {/* <InvitationButton eventTitle="Event Title" eventDate="Saturday, October 31" onPress={ () => console.log("Event Invitation Pressed")}/> */}
             </View>
             
             <View style={[styles.box, styles.container2]}>
-                <Text style={[globalStyles.darkText, styles.header]}>Join Event</Text>
+                <Text style={globalStyles.darkHeader}>Join Event</Text>
                 <TextInput
                     style={[globalStyles.input, {width: 300, marginTop: 20}]}
                     placeholder= "code/link"
@@ -37,20 +37,16 @@ const styles = StyleSheet.create({
         padding: 15,
         padding: 15,
         borderRadius: 10,
-        margin: 12
+        margin: 10
     },
     container1: {
         width: 340,
-        height: 450,
-        marginTop: 20,
+        height: 440,
+        marginTop: 60,
     },
-      container2: {
+    container2: {
+        marginTop: 12,
         width: 340,
         height: 220,
-    },
-    header: {
-        fontSize: 35, 
-        fontFamily: 'SFProDisplay-Bold',
-        marginBottom: 5
     }
 });
