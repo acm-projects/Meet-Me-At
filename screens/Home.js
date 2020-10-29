@@ -5,7 +5,7 @@ import Event from '../components/Event'
 
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
-export default function Home({navigation}) {
+export default function Home({ navigation}) {
     const [allView, setAllView] = useState(true);
     const [guestView, setGuestView] = useState(false);
     const [hostView, setHostView] = useState(false);
@@ -34,12 +34,12 @@ export default function Home({navigation}) {
                         borderBottomWidth: 0.75}}>
                         <Text style={[globalStyles.SFProText_Regular, globalStyles.darkText, {fontSize: 14, paddingVertical: 3}]}> { months[monthDisplay - 1] }</Text>
                     </View>
-                    <Event style={{backgroundColor}} info = {json} onPress={ () => console.log(json.title)} />
+                    <Event style={{backgroundColor}} info = {json} onPress={ () => navigation.navigate('CreateEvent', {json})} />
                 </View>
                 )
             } else {
                 return(
-                    <Event style={{backgroundColor}} info = {json} onPress={ () => console.log("event pressed")} />
+                    <Event style={{backgroundColor}} info = {json} onPress={ () => navigation.navigate('CreateEvent', {json})} />
                 )
             }
         
@@ -54,7 +54,7 @@ export default function Home({navigation}) {
             <Text style={[globalStyles.darkHeader, {marginTop: 5}]}>Events</Text>
             
             <View style={{display: 'flex', flexDirection: 'row', marginBottom: 10, marginTop: 3}}>
-                <TouchableOpacity onPress={ () => navigation.navigate('CreateEvent')} delayPressIn={0}>
+                <TouchableOpacity onPress={ () => navigation.navigate('CreateEvent', { undefined })} delayPressIn={0}>
                     <Text style={{backgroundColor: '#453F3E', padding: 5, marginLeft: 4, marginRight: 10, color: '#fff', width: 100, textAlign: 'center'}}>Create Event</Text>
                 </TouchableOpacity>
 

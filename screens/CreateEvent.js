@@ -4,12 +4,25 @@ import RoundButton from '../components/RoundButton'
 import { globalStyles } from '../styles/globalStyles'
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 
-export default function CreateEvent({ navigation}) {
+export default function CreateEvent({ route, navigation}) {
     //**** handle start date picker ****//
     //console.log(info);
+    //{ title: 'event #4', startDate: '12/15/20', endDate: '12/15/20', startTime: '3:00 PM', endTime:'4:00 PM', day: '2', about: 'about', host: 'yes'}
+    //const { json } = route.params;
+    
+    //console.log(info);
+    let info = {};
+    if (route.params.json !== undefined) {
+        info = JSON.parse(route.params.json);
+        //onChangeStartDate(info.startDate);
+    } 
+
+    const [title, setEventTitle] = useState("");
+    const [about, setAbout] = useState("");
+    
 
     const [showStartDatePicker, handleStartDatePicker] = useState(false);
-    const [startDate, onChangeStartDate] = useState("");
+    const [startDate, onChangeStartDate] = useState(info.startDate ? info.startDate : "");
 
     const openStartDatePicker = () => {
         handleStartDatePicker(true);
@@ -27,7 +40,7 @@ export default function CreateEvent({ navigation}) {
 
     //**** handle end date picker ****//
     const [showEndDatePicker, handleEndDatePicker] = useState(false);
-    const [endDate, onChangeEndDate] = useState("");
+    const [endDate, onChangeEndDate] = useState(info.endDate ? info.endDate : "");
 
     const openEndDatePicker = () => {
         handleEndDatePicker(true);
@@ -46,7 +59,7 @@ export default function CreateEvent({ navigation}) {
 
     //**** handle start time picker ****//
     const [showStartTimePicker, handleStartTimePicker] = useState(false);
-    const [startTime, onChangeStartTime] = useState("");
+    const [startTime, onChangeStartTime] = useState(info.startTime ? info.startTime : "");
 
     const openStartTimePicker = () => {
         handleStartTimePicker(true);
@@ -66,7 +79,7 @@ export default function CreateEvent({ navigation}) {
 
     //**** handle end time picker ****//
     const [showEndTimePicker, handleEndTimePicker] = useState(false);
-    const [endTime, onChangeEndTime] = useState("");
+    const [endTime, onChangeEndTime] = useState(info.endTime ? info.endTime : "");
 
     const openEndTimePicker = () => {
         handleEndTimePicker(true);
@@ -83,6 +96,25 @@ export default function CreateEvent({ navigation}) {
         closeEndTimePicker();
     };
 
+    if (route.params.json === undefined) {
+        info = {
+            title,
+            startDate,
+            endDate,
+            startTime, 
+            endTime,
+            about
+        };
+    }
+    // if (info) {
+    //     setEventTitle(info.title)
+    //     onChangeStartDate(info.startDate);
+    //     onChangeEndDate(info.endDate);
+    //     onChangeStartTime(info.startTime);
+    //     onChangeEndDate(info.endTime);
+    //     setAbout(info.about);
+    // }
+
     return (
         <View style={[globalStyles.mainBackground, {paddingTop: 62, paddingHorizontal: 15, flex: 1, alignItems: 'center', marginTop: 15}]}>
                 <TextInput
@@ -90,7 +122,9 @@ export default function CreateEvent({ navigation}) {
                     placeholder= "Event Title"
                     placeholderTextColor = "#D0D0D0"
                     autoCapitalize = 'none' 
-                    autoCorrect={false} 
+                    autoCorrect={false}
+                    defaultValue={info.title}
+                    onChangeText={text => setEventTitle(text)}
                 />
                 
                 <View style={{display: 'flex', flexDirection: 'row'}}>
@@ -99,6 +133,7 @@ export default function CreateEvent({ navigation}) {
                         placeholderTextColor = "#D0D0D0"
                         autoCapitalize = 'none' 
                         autoCorrect={false} 
+                        defaultValue = {info.startDate}
                         onFocus={openStartDatePicker}
                         value={startDate}
                     />
@@ -115,6 +150,7 @@ export default function CreateEvent({ navigation}) {
                         placeholderTextColor = "#D0D0D0"
                         autoCapitalize = 'none' 
                         autoCorrect={false} 
+                        defaultValue = {info.endDate}
                         onFocus={openEndDatePicker}
                         value={endDate}
                         />
