@@ -6,6 +6,7 @@ import JoinEvent from './screens/JoinEvent'
 import Home from './screens/Home'
 import CreateEvent from './screens/CreateEvent'
 import Profile from './screens/Profile'
+import SignUpPage from './screens/SignUpPage'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { AuthContext } from './context'
@@ -54,7 +55,7 @@ export default function App() {
           {!userToken ? ( 
           <LogInStack.Navigator>
             <LogInStack.Screen name="LogIn" component={LogIn} options={{headerTransparent: true, title: ''}}/>
-
+            <LogInStack.Screen name="SignUp" component={SignUpPage} options={{headerTransparent: true, title: ''}}/>
           </LogInStack.Navigator>
           ) : (
             <HomeStack.Navigator>

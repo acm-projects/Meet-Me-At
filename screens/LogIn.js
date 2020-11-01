@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, TextInput, Image, Alert } from 'react-native';
 import RoundButton from '../components/RoundButton'
 import { globalStyles } from '../styles/globalStyles'
 import { AuthContext } from '../context'
+
 export default function LogIn({ navigation }) {
   const { signIn } = useContext(AuthContext);
   const[username, setUserName] = useState(null);
@@ -35,7 +36,7 @@ export default function LogIn({ navigation }) {
       
       <RoundButton style={{top: 13, marginTop: 30, marginBottom: 20, backgroundColor: '#FF6961'}} text="Login" onPress={ () => logIn() } />
       <Text style = {[globalStyles.lightText, globalStyles.textBody, { top: 23 }]}>──────    OR    ──────</Text>
-      <RoundButton style={{marginTop: 20, top: 28, backgroundColor: '#E4E4E4'}} text="Create Account" onPress={ () => navigation.navigate("Join")} />
+      <RoundButton style={{marginTop: 20, top: 28, backgroundColor: '#E4E4E4'}} text="Create Account" onPress={ () => navigation.navigate("SignUp")} />
     </View>
   )
 };
