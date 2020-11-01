@@ -5,7 +5,7 @@ import {StyleSheet, Text, View} from "react-native";
 export default function EventDetails({navigation}) {
     return (
         <View style={[globalStyles.mainBackground, styles.container]}>
-            <Text style={[globalStyles.SFProDisplay_Bold, styles.title]}>Event Title</Text>
+            <Text style={[globalStyles.SFProDisplay_Bold, styles.title, globalStyles.darkText]}>Event Title</Text>
             <Text style={[globalStyles.SFProText_Regular, styles.bottomLine, {marginTop: 0}]} >By User</Text>
 
             <Text style={[globalStyles.SFProDisplay_Medium, styles.redSubTitle]}>When</Text>
@@ -40,22 +40,21 @@ const styles = StyleSheet.create({
 	    flex: 1,
         paddingTop: 62, 
         paddingHorizontal: 20,
-        color: '#000'
     },
     title: {
         marginTop: 28,
         fontSize: 45,
     },
     redSubTitle: {
-        marginTop: 25,
-        marginBottom: 7,
+        marginTop: 26,
+        marginBottom: 5,
         fontSize: 25,
         color: '#FF6961'
     },
     topLine: {
         marginTop: 5,
-        color: '#000',
         fontSize: 20,
+        color: '#453F3E'
     },
     bottomLine: {
         marginTop: 5,
