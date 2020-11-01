@@ -34,12 +34,14 @@ export default function Home({ navigation}) {
                         borderBottomWidth: 0.75}}>
                         <Text style={[globalStyles.SFProText_Regular, globalStyles.darkText, {fontSize: 14, paddingVertical: 3}]}> { months[monthDisplay - 1] }</Text>
                     </View>
-                    <Event style={{backgroundColor}} info = {json} onPress={ () => navigation.navigate('CreateEvent', {json})} />
+                    {/* <Event style={{backgroundColor}} info = {json} onPress={ () => navigation.navigate('CreateEvent', {json})} /> */}
+                    <Event style={{backgroundColor}} info = {json} onPress={ () => navigation.navigate('EventDetails', {json})} />
                 </View>
                 )
             } else {
                 return(
-                    <Event style={{backgroundColor}} info = {json} onPress={ () => navigation.navigate('CreateEvent', {json})} />
+                    // <Event style={{backgroundColor}} info = {json} onPress={ () => navigation.navigate('CreateEvent', {json})} />
+                    <Event style={{backgroundColor}} info = {json} onPress={ () => navigation.navigate('EventDetails', {json})} />
                 )
             }
         

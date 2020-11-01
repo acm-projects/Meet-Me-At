@@ -28,6 +28,9 @@ export const globalStyles = StyleSheet.create({
     SFProText_Light: {
         fontFamily: "SFProText-Light"
     },
+    SFProDisplay_Medium: {
+        fontFamily: "SFProDisplay-Medium"
+    },
     darkText: {
         color: '#453F3E'
     },
