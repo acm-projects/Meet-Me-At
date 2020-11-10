@@ -11,7 +11,7 @@ export default function Event({ info, onPress, style}){
     return (
         <TouchableOpacity style={[styles.button, styles.container, style]} onPress={onPress} delayPressIn={0}>
             <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-    <Text style={[globalStyles.SFProText_Heavy, {fontSize: 24, color: '#fff'}]}>{event.startDate.substr(event.startDate.indexOf('/') + 1, 2)}</Text>
+    <Text style={[globalStyles.SFProText_Heavy, {fontSize: 24, color: '#fff'}]}>{event.startDate.split("/")[1]}</Text>
                 <Text style={[globalStyles.SFProText_Regular, {fontSize: 12, color: '#fff'}]}>{ day }</Text>
             </View>
 
@@ -26,7 +26,7 @@ export default function Event({ info, onPress, style}){
 
 const styles = StyleSheet.create({
     container: {
-        width: 340, 
+        width: 340,
         height: 74,
         display: 'flex',
         flexDirection: 'row',
