@@ -1,34 +1,28 @@
 import React, {useState} from "react";
 import { globalStyles } from '../styles/globalStyles'
 import {StyleSheet, Text, View} from "react-native";
-
-export default function EventDetails({navigation}) {
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+let tool = require('../backend_tools.js');
+export default function EventDetails({route, navigation}) {
+    const data = route.params.item;
     return (
         <View style={[globalStyles.mainBackground, styles.container]}>
-            <Text style={[globalStyles.SFProDisplay_Bold, styles.title, globalStyles.darkText]}>Event Title</Text>
-            <Text style={[globalStyles.SFProText_Regular, styles.bottomLine, {marginTop: 0}]} >By User</Text>
+            <Text style={[globalStyles.SFProDisplay_Bold, styles.title, globalStyles.darkText]}>{data.raw.name}</Text>
+            <Text style={[globalStyles.SFProText_Regular, styles.bottomLine, {marginTop: 0}]} >By {data.raw.host}</Text>
 
             <Text style={[globalStyles.SFProDisplay_Medium, styles.redSubTitle]}>When</Text>
-            <Text style={[globalStyles.SFProDisplay_Medium, styles.topLine]} >Fri, 28 September 2020</Text>
+            <Text style={[globalStyles.SFProDisplay_Medium, styles.topLine]} >{days[data.day - 1]}, {data.raw.time.start.day} {months[data.raw.time.start.month - 1]} {data.raw.time.start.year}</Text>
             <Text style={[globalStyles.SFProText_Regular, styles.bottomLine]}>5 PM - 10 PM</Text>
 
             <Text style={[globalStyles.SFProDisplay_Medium, styles.redSubTitle]}>Where</Text>
-            <Text style={[globalStyles.SFProDisplay_Medium, styles.topLine]} >San Diego</Text>
-            <Text style={[globalStyles.SFProText_Regular, styles.bottomLine]}>California, United States</Text>
+            <Text style={[globalStyles.SFProDisplay_Medium, styles.topLine]}>{data.raw.location}</Text>
 
             <Text style={[globalStyles.SFProDisplay_Medium, styles.redSubTitle]}>About</Text>
-            <Text style={[globalStyles.SFProDisplay_Medium, styles.topLine]} >Description:</Text>
-            <Text style={[globalStyles.SFProText_Regular, styles.bottomLine]}>The quick brown fox jumped over the log</Text>
+            <Text style={[globalStyles.SFProText_Regular, styles.bottomLine]}>{data.raw.description}</Text>
 
-            <View style={{flex: 0, flexDirection: 'row', marginTop: 30}}>
-                <Text style={[globalStyles.SFProDisplay_Medium, styles.topLine, {marginTop: 0, marginBottom: 30}]} >Your Reply:</Text>
-                <Text style={[styles.RSVP, globalStyles.SFProDisplay_Medium]}> Yes</Text>
-            </View>
-            
-            <Text style={[globalStyles.SFProDisplay_Medium, styles.topLine]} >Guests:</Text>
-            <Text style={[globalStyles.SFProText_Regular, styles.bottomLine]}>    Guest 1</Text>
-            <Text style={[globalStyles.SFProText_Regular, styles.bottomLine]}>    Guest 2</Text>
-            <Text style={[globalStyles.SFProText_Regular, styles.bottomLine]}>    Guest 3</Text>
+            <Text style={[globalStyles.SFProDisplay_Medium, styles.redSubTitle]}>Guests</Text>
+            <Text style={[globalStyles.SFProText_Regular, styles.bottomLine]}>{data.raw.guests.toString()}</Text>
 
 
         </View>
@@ -38,12 +32,12 @@ export default function EventDetails({navigation}) {
 const styles = StyleSheet.create({
 	container: {
 	    flex: 1,
-        paddingTop: 62, 
+        paddingTop: 62,
         paddingHorizontal: 20,
     },
     title: {
-        marginTop: 28,
-        fontSize: 45,
+        marginTop: 10,
+        fontSize: 30,
     },
     redSubTitle: {
         marginTop: 26,
@@ -52,7 +46,7 @@ const styles = StyleSheet.create({
         color: '#FF6961'
     },
     topLine: {
-        marginTop: 5,
+        marginTop: 9,
         fontSize: 20,
         color: '#453F3E'
     },
@@ -61,10 +55,15 @@ const styles = StyleSheet.create({
         color: '#9e9e9e',
         fontSize: 16,
     },
+    description: {
+        marginTop: 5,
+        color: '#453F3E',
+        fontSize: 18,
+    },
     RSVP: {
         marginHorizontal: 5,
         color: '#48AA26',
         fontSize: 20,
     }
-   
+
 })
