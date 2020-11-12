@@ -20,19 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bfcb49cd-2693-4af9-9c08-2e29a15e9e87" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend_tools.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_tools.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend_tools.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Event.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Event.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/CreateEvent.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/CreateEvent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/EventDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/EventDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/JoinEvent.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/JoinEvent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/LogIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/LogIn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/SignUpPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/SignUpPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,6 +105,7 @@
       <workItem from="1604899657968" duration="687000" />
       <workItem from="1604907265161" duration="755000" />
       <workItem from="1604915566896" duration="19200000" />
+      <workItem from="1605142637946" duration="413000" />
     </task>
     <servers />
   </component>

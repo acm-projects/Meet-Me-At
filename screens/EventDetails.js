@@ -13,7 +13,7 @@ export default function EventDetails({route, navigation}) {
 
             <Text style={[globalStyles.SFProDisplay_Medium, styles.redSubTitle]}>When</Text>
             <Text style={[globalStyles.SFProDisplay_Medium, styles.topLine]} >{days[data.day - 1]}, {data.raw.time.start.day} {months[data.raw.time.start.month - 1]} {data.raw.time.start.year}</Text>
-            <Text style={[globalStyles.SFProText_Regular, styles.bottomLine]}>5 PM - 10 PM</Text>
+
 
             <Text style={[globalStyles.SFProDisplay_Medium, styles.redSubTitle]}>Where</Text>
             <Text style={[globalStyles.SFProDisplay_Medium, styles.topLine]}>{data.raw.location}</Text>
@@ -26,7 +26,7 @@ export default function EventDetails({route, navigation}) {
 
 
         </View>
-    )
+    )// <Text style={[globalStyles.SFProText_Regular, styles.bottomLine]}>5 PM - 10 PM</Text>
 }
 
 const styles = StyleSheet.create({

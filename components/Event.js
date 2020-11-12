@@ -2,12 +2,12 @@ import React from 'react'
 import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
 import { globalStyles } from '../styles/globalStyles'
 
-const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 export default function Event({ info, onPress, style}){
     const event = JSON.parse(info);
 
-    const day = days[event.day - 1]
+    const day = days[event.day]
     return (
         <TouchableOpacity style={[styles.button, styles.container, style]} onPress={onPress} delayPressIn={0}>
             <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>

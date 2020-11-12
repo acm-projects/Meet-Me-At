@@ -116,7 +116,7 @@ export default function CreateEvent({ route, navigation}) {
     //     onChangeEndDate(info.endTime);
     //     setAbout(info.about);
     // }
-    function save() {
+    async function save() {
         if (title === "" || startDate === null || endDate === null || startTime === null || endTime === null || location === null || about === "" || usernames === null) {
             Alert.alert("Please enter in the Event Details", "", [{ text: "OK" }], { cancelable: false })
             return;
@@ -127,8 +127,11 @@ export default function CreateEvent({ route, navigation}) {
         let timeEnd = endTime.split(":");
         let amStart = startTime.endsWith("AM");
         let amEnd = endTime.endsWith("AM");
+        let user = tool.getAccount();
+        usernames.push(user.username);
+        let eventId = await tool.genId();
         let event = tool.toEventData(
-            tool.getAccount().username,
+            user.username,
             title,
             location,
             tool.toEventTime(
@@ -137,7 +140,10 @@ export default function CreateEvent({ route, navigation}) {
             about,
             usernames
         );
-        tool.addEvent(event).then(navigation.navigate('Home'));
+        event.id = eventId;
+        user.events.push(eventId);
+        tool.setAccount(user);
+        await tool.addEvent(event).then((res) => tool.updateUser(user).then()).then(navigation.navigate('Home'));
     }
 
     return (
@@ -243,7 +249,7 @@ export default function CreateEvent({ route, navigation}) {
                         placeholderTextColor = "#D0D0D0"
                         style={{alignSelf: 'flex-start'}}/>
 
-            <RoundButton style={{backgroundColor: '#E4E4E4', top: 40}} text="Save Event" onPress={ () => save() } />
+            <RoundButton style={{backgroundColor: '#E4E4E4', top: 40}} text="Save Event" onPress={ () => save().then() } />
             {/* <RoundButton style={{backgroundColor: '#FF6961', marginVertical: 15}} text="Cancel" onPress={ () => console.log("Cancel Event")} /> */}
         </View>
     )
